@@ -207,7 +207,7 @@ class UserController extends Controller
 
             $user_activity = UserActivity::where('activity_id', $data['activity_id'])->first();
             
-            if(empty($user_activity)){
+            if(!empty($user_activity)){
                 return response()->json([
                     'code' => 422,
                     'error' => true,
